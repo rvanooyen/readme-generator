@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
+// const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
@@ -16,26 +16,53 @@ const promptUser = () => {
                     questions.push(titleInput);
                     return true;
                 } else {
-                    console.log('Please enter your readme title!');
+                    console.log('Please enter your Readme title!');
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Please enter a description for the Readme file. (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    questions.push(descriptionInput);
+                    return true;
+                } else {
+                    console.log('Please enter your Readme description!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'checkbox',
+            name: 'languagesUsed',
+            message: 'Please select the languages used.',
+            choices: ['jScript', 'CSS', 'HTML', 'ES6', 'jQuery', 'Bootstrap', 'Node']
         }
-    ])    
+    ]);        
 };
 
 // TODO: Create a function to write README file
-const writeToFile = (fileName, data) => {
-
-};
 
 // TODO: Create a function to initialize app
 const init = () => {
-    // console.log(questions);
+    // Prompts user for inputs
+    promptUser()
+        .then = (questions => {
+            return generateMarkdown(questions);
+        })
+        .then(readme => {
+            return generateMarkdown.writeToFile(questions);
+        })
+        .then(writeToFileResponse => {
+            console.log(writeToFileResponse);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
-
-// Function call to prompt user
-promptUser();
 
 // Function call to initialize app
 init();
