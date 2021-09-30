@@ -1,8 +1,14 @@
 const fs = require('fs');
 
 const writeToFile = fileContent => {
+    let fileContentString ="";
+    for (let i = 0; i < fileContent.length; i++) {
+      fileContentString = fileContentString + ' ' + fileContent[i];
+      console.log(fileContentString);
+    }
+
     return new Promise((resolve, reject) => {
-        fs.writeFile('Readme.md', fileContent, err => {
+        fs.writeFile('Readme.md', fileContentString, err => {
             if (err) {
                 reject(err);
                 return;
