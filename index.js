@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 // const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeToFile = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -41,7 +42,7 @@ const promptUser = () => {
             message: 'Please select the languages used.',
             choices: ['jScript', 'CSS', 'HTML', 'ES6', 'jQuery', 'Bootstrap', 'Node']
         }
-    ]);        
+    ])    
 };
 
 // TODO: Create a function to write README file
@@ -50,14 +51,15 @@ const promptUser = () => {
 const init = () => {
     // Prompts user for inputs
     promptUser()
-        .then = (questions => {
+        .then(questions => {
+            console.log(questions);
             return generateMarkdown(questions);
         })
-        .then(readme => {
-            return generateMarkdown.writeToFile(questions);
+        .then(questions => {
+            return writeToFile(questions);
         })
         .then(writeToFileResponse => {
-            console.log(writeToFileResponse);
+            console.log(writeToFileResponse);            
         })
         .catch(err => {
             console.log(err);

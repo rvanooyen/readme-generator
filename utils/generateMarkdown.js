@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const writeFile = fileContent => {
+const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
         fs.writeFile('Readme.md', fileContent, err => {
             if (err) {
@@ -10,7 +10,7 @@ const writeFile = fileContent => {
 
             resolve({
                 ok: true,
-                message: 'File created!'
+                message: 'Readme created!'
             });
         });
     });
@@ -35,10 +35,11 @@ const renderLicenseSection = (license) => {
 };
 
 // TODO: Create a function to generate markdown for README
-const generateMarkdown = (data) =>{
-  return `# ${data.title}
+// const generateMarkdown = (data) =>{
+//   return `# ${data.title}
 
-`;
-};
+// `;
+// };
 
-module.exports = generateMarkdown;
+// module.exports = generateMarkdown;
+module.exports = writeToFile;
