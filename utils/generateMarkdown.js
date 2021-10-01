@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-const writeToFile = fileContent => {
+exports.writeToFile = function(fileContent) {
     let fileContentString ="";
     for (let i = 0; i < fileContent.length; i++) {
       fileContentString = fileContentString + ' ' + fileContent[i];
-      console.log(fileContentString);
+      console.log('fileContentString', fileContentString);
     }
 
     return new Promise((resolve, reject) => {
@@ -48,4 +48,3 @@ const renderLicenseSection = (license) => {
 // };
 
 // module.exports = generateMarkdown;
-module.exports = writeToFile;
