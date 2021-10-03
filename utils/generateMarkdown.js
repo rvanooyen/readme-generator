@@ -2,12 +2,17 @@ const fs = require('fs');
 
 exports.writeToFile = function(fileContent) {
     let fileContentString ="";
-    for (let i = 0; i < fileContent.length; i++) {
-      fileContentString = fileContentString + ' ' + fileContent[i];
-      console.log('fileContentString', fileContentString);
-    }
+    console.log(fileContent);
+
+    const { title, description } = fileContent;
+    const fileContentArr = [];
+
+    fileContentArr.push(title);
+    fileContentArr.push(description);
+    console.log(fileContentArr);
 
     return new Promise((resolve, reject) => {
+        fileContentString = title;
         fs.writeFile('Readme.md', fileContentString, err => {
             if (err) {
                 reject(err);
@@ -20,6 +25,24 @@ exports.writeToFile = function(fileContent) {
             });
         });
     });
+        
+    
+    // for (let i = 0; i < fileContentArr.length; i++) {    
+    //     return new Promise((resolve, reject) => {
+    //         fileContentString = fileContentArr[i + 1];
+    //         fs.appendFile('Readme.md', fileContentString, err => {
+    //             if (err) {
+    //                 reject(err);
+    //                 return;
+    //             }
+
+    //             resolve({
+    //                 ok: true,
+    //                 message: 'Readme created!'
+    //             });
+    //         });
+    //     });
+    // }
 };
 
 // TODO: Create a function that returns a license badge based on which license is passed in
