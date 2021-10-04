@@ -22,17 +22,17 @@ const generateMarkdown = (data) =>{
 # Title ${data.title}
 ## Description 
 ${data.description}
-    ## Table of Contents
-    -[Title](#title)
-    - Description
-    - Installation
-    - Usage
-    - Credits
-    - Licence
-    - Testing
-    - Questions
-    ## Technologies Used
-    ${data.choices}
+## Table of Contents
+- [Title](#title)
+- Description
+- Installation
+- Usage
+- Credits
+- Licence
+- Testing
+- Questions
+## Technologies Used
+${data.choices}
 
 `;
 }
