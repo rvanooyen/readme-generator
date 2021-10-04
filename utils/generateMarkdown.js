@@ -19,19 +19,19 @@
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) =>{
   return `
-# Title ${data.title}
+# ${data.title}
 ## Description 
 ${data.description}
 ## Table of Contents
 - [Title](#title)
-- Description
-- Installation
-- Usage
-- Credits
-- Licence
-- Testing
-- Questions
-## Technologies Used
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Licence](#license)
+- [Testing](#testing)
+- [Questions](#questions)
+- [Technologies Used](#technologies)
 ${data.choices}
 
 `;
