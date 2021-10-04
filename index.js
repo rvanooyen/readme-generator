@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-// const fs = require('fs');
-const { writeToFile } = require('./utils/generateMarkdown.js');
-// const writeToFile = require('./utils/generateMarkdown.js');
+const fs = require('fs');
+const writeToFile = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -52,8 +52,21 @@ const init = () => {
     // Prompts user for inputs
     promptUser()
         .then(questions => {
-            // console.log(questions);
-            return writeToFile(questions);
+            console.log(questions);
+            const readmeDetails = generateMarkdown(questions);
+            return new Promise((resolve, reject) => {
+                fs.writeFile('Readme.md', readmeDetails, err => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+        
+                    resolve({
+                        ok: true,
+                        message: 'Readme created!'
+                    });
+                });
+            });
         })        
         .then(writeToFileResponse => {
             console.log(writeToFileResponse);            
