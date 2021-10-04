@@ -19,8 +19,7 @@
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (data) =>{
   return `
-    # Title
-     ${data.title}
+    # Title ${data.title}
     ## Description 
      ${data.description}
     ## Table of Contents
@@ -36,7 +35,7 @@ const generateMarkdown = (data) =>{
     ${data.choices}
 
 `;
-};
+}
 
 
 module.exports = generateMarkdown;
