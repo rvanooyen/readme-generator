@@ -55,7 +55,7 @@ const init = () => {
             console.log(questions);
             const readmeDetails = generateMarkdown(questions);
             return new Promise((resolve, reject) => {
-                fs.writeFile('Readme.md', readmeDetails, err => {
+                fs.writeFile('README.md', readmeDetails, err => {
                     if (err) {
                         reject(err);
                         return;
