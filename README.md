@@ -1,9 +1,9 @@
 
-# Test
+# Readme
 ## Description
 description
 ## Technologies Used
-jScript, CSS, HTML, ES6, jQuery, Bootstrap, Node
+jScript
 ## Table of Contents
 - [Title](#title)
 - [Description](#description)
@@ -18,20 +18,20 @@ jScript, CSS, HTML, ES6, jQuery, Bootstrap, Node
 - [Testing](#testing)
 - [Questions](#questions)
 ## Installation
-instructions
+Intstruct
 ## Usage
-Using
+Use
 ## Credits
 Robert
 ## License
-- MIT
-- https://opensource.org/licenses/MIT
-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+- Apache
+- https://opensource.org/licenses/Apache-2.0
+- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ## Features
 features
 ## Contributing InstructionsI 
-Instruct
+do it
 ## Testing Data
 test
 ## Any question please contact me at:
-robert.vanooyen@gmail.com
+Robert
