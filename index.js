@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const writeToFile = require('./utils/generateMarkdown.js');
+const renderLicenseSection = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
@@ -59,7 +59,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Please enter instructions for using the Readme file. (Required)',
+            message: 'Please enter instructions for using the Readme file. Please add screenshots as necessary(Required)',
             validate: usageInput => {
                 if (usageInput) {
                     questions.push(usageInput);
@@ -88,27 +88,13 @@ const promptUser = () => {
             type: 'list',
             name: 'license',
             message: 'Please select a license for the Readme file. (Required)',
-            choices: ['Apache', 'GNU', 'MIT', 'OpenBSD', 'Rust', 'WordPress'],
+            choices: ['Apache', 'GNU', 'MIT', 'OpenBSD', 'None'],
             validate: licenseInput => {
                 if (licenseInput) {
                     questions.push(licenseInput);
                     return true;
                 } else {
                     console.log('Please enter your Readme description!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'badge',
-            message: 'Please enter a badge for your license. (Required)',
-            validate: badgeInput => {
-                if (badgeInput) {
-                    questions.push(badgeInput);
-                    return true;
-                } else {
-                    console.log('Please enter a badge for your license!');
                     return false;
                 }
             }
@@ -179,8 +165,11 @@ const init = () => {
     // Prompts user for inputs
     promptUser()
         .then(questions => {
-            console.log(questions);
+            console.log(questions);            
             const readmeDetails = generateMarkdown(questions);
+            const licenseDetails = renderLicenseSection(questions.license);
+            console.log(questions.license);
+            console.log(licenseDetails);
             return new Promise((resolve, reject) => {
                 fs.writeFile('README.md', readmeDetails, err => {
                     if (err) {
