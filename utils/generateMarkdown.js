@@ -61,12 +61,12 @@ ${data.usage}
 ## Credits
 ${data.credits}
 ## License
-${data.license}
+${renderLicenseSection(data.license)}
 ## Badge
 ${data.badge}
 ## Features
 ${data.features}
-## Contributing Instructions
+## Contributing InstructionsI 
 ${data.contributing}
 - [Technologies Used](#technologies)
 ${data.choices}
@@ -78,4 +78,4 @@ ${data.contact}
 `;
 }
 
-module.exports = {generateMarkdown, renderLicenseSection};
+module.exports = generateMarkdown;

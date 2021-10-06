@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const renderLicenseSection = require('./utils/generateMarkdown.js');
+// const renderLicenseSection = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
@@ -167,9 +167,7 @@ const init = () => {
         .then(questions => {
             console.log(questions);            
             const readmeDetails = generateMarkdown(questions);
-            const licenseDetails = renderLicenseSection(questions.license);
-            console.log(questions.license);
-            console.log(licenseDetails);
+            
             return new Promise((resolve, reject) => {
                 fs.writeFile('README.md', readmeDetails, err => {
                     if (err) {
