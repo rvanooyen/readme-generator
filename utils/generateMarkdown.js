@@ -20,6 +20,8 @@ const renderLicenseBadge = (license) => {
             licenseBadge = '';
             break;
     }
+
+    return licenseBadge;
 };
 
 const renderLicenseLink = (license) => {
