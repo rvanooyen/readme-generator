@@ -1,17 +1,51 @@
  // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// const renderLicenseBadge = (license) => {
+const renderLicenseBadge = (license) => {
+    let licenseBadge = '';
 
-// };
+    switch (license) {
+        case 'Apache':
+            licenseBadge = '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)';
+            break;
+        case 'GNU':
+            licenseBadge = '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)';
+            break;
+        case 'MIT':
+            licenseBadge = '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
+            break;
+        case 'OpenBSD':
+            licenseBadge = '![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)';
+            break;
+        case 'None':
+            licenseBadge = '';
+            break;
+    }
+};
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// const renderLicenseLink = (license) => {
+const renderLicenseLink = (license) => {
+    let licenseLink = '';
 
-// };
+    switch (license) {
+        case 'Apache':
+            licenseLink = 'https://opensource.org/licenses/Apache-2.0';
+            break;
+        case 'GNU':
+            licenseLink = 'https://www.gnu.org/licenses/gpl-3.0';
+            break;
+        case 'MIT':
+            licenseLink = 'https://opensource.org/licenses/MIT';
+            break;
+        case 'OpenBSD':
+            licenseLink = 'https://opensource.org/licenses/BSD-3-Clause';
+            break;
+        case 'None':
+            licenseLink = '';
+            break;
+    }
+    
+    return licenseLink;
+};
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 const renderLicenseSection = (license) => {
     let licenseString = '';
 
@@ -61,6 +95,9 @@ ${data.usage}
 ## Credits
 ${data.credits}
 ## License
+${data.license}
+${renderLicenseLink(data.license)}
+${renderLicenseBadge(data.license)}
 ${renderLicenseSection(data.license)}
 ## Badge
 ${data.badge}
