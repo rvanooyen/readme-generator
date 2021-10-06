@@ -1,7 +1,7 @@
 
 # Readme
 ## Description
-description
+A README.md generator that takes user inputs and generates a README.md file.
 ## Technologies Used
 jScript
 ## Table of Contents
@@ -37,3 +37,5 @@ test
 Robert
 ## Walkthrough Video
 https://user-images.githubusercontent.com/86528244/136279633-251ffa12-7be2-4e87-85c6-d6aae9df7fa9.mp4
+## GitHub Page
+https://github.com/rvanooyen/readme-generator.git
