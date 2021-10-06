@@ -99,10 +99,7 @@ ${data.credits}
 ## License
 - ${data.license}
 - ${renderLicenseLink(data.license)}
-- ${renderLicenseBadge(data.license)}
 - ${renderLicenseSection(data.license)}
-## Badge
-${data.badge}
 ## Features
 ${data.features}
 ## Contributing InstructionsI 
