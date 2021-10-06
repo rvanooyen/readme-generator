@@ -76,11 +76,14 @@ const renderLicenseSection = (license) => {
 const generateMarkdown = (data) =>{
   return `
 # ${data.title}
-## Description 
+## Description
 ${data.description}
+## Technologies Used
+${data.languages.join(', ')}
 ## Table of Contents
 - [Title](#title)
 - [Description](#description)
+- [Technologies Used](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -104,13 +107,10 @@ ${data.credits}
 ${data.features}
 ## Contributing InstructionsI 
 ${data.contributing}
-- [Technologies Used](#technologies)
-${data.choices}
 ## Testing Data
 ${data.test}
 ## Any question please contact me at:
 ${data.contact}
-
 `;
 }
 

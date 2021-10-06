@@ -38,7 +38,7 @@ const promptUser = () => {
         },
         {
             type: 'checkbox',
-            name: 'languagesUsed',
+            name: 'languages',
             message: 'Please select the languages used.',
             choices: ['jScript', 'CSS', 'HTML', 'ES6', 'jQuery', 'Bootstrap', 'Node']
         },
